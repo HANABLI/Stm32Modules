@@ -1,0 +1,278 @@
+10:45:07 **** Incremental Build of configuration Debug for project timer_OC_PWM ****
+make -j4 all 
+arm-none-eabi-size   timer_OC_PWM.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11360	     20	   1764	  13144	   3358	timer_OC_PWM.elf
+Finished building: default.size.stdout
+ 
+10:54:29 **** Incremental Build of configuration Debug for project timer_OC_PWM ****
+make -j4 all 
+arm-none-eabi-size   timer_OC_PWM.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11360	     20	   1764	  13144	   3358	timer_OC_PWM.elf
+Finished building: default.size.stdout
+ 
+11:02:47 **** Incremental Build of configuration Debug for project timer_OC_PWM ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F303xE -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F303xE -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/msp.d" -MT"Src/msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/msp.o"
+../Src/main.c: In function 'Sysclk_Config':
+../Src/main.c:68:11: error: 'RCC_OscInitTypeDef {aka struct <anonymous>}' has no member named 'HSECalibrationValue'; did you mean 'HSICalibrationValue'?
+  osc_init.HSECalibrationValue = 16;
+           ^~~~~~~~~~~~~~~~~~~
+           HSICalibrationValue
+make: *** [Src/subdir.mk:29: Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+11:03:34 **** Incremental Build of configuration Debug for project timer_OC_PWM ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F303xE -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "timer_OC_PWM.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\hqnqb\STM32CubeIDE\workspace_1.3.0\timer_OC_PWM\STM32F303RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="timer_OC_PWM.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: timer_OC_PWM.elf
+ 
+arm-none-eabi-objdump -h -S  timer_OC_PWM.elf  > "timer_OC_PWM.list"
+arm-none-eabi-objcopy  -O binary  timer_OC_PWM.elf  "timer_OC_PWM.bin"
+arm-none-eabi-size   timer_OC_PWM.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11388	     20	   1764	  13172	   3374	timer_OC_PWM.elf
+Finished building: default.size.stdout
+ 
+Finished building: timer_OC_PWM.bin
+ 
+Finished building: timer_OC_PWM.list
+ 
+11:13:06 **** Incremental Build of configuration Debug for project timer_OC_PWM ****
+make -j4 all 
+arm-none-eabi-size   timer_OC_PWM.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11388	     20	   1764	  13172	   3374	timer_OC_PWM.elf
+Finished building: default.size.stdout
+ 
+11:14:01 **** Incremental Build of configuration Debug for project timer_OC_PWM ****
+make -j4 all 
+arm-none-eabi-size   timer_OC_PWM.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11388	     20	   1764	  13172	   3374	timer_OC_PWM.elf
+Finished building: default.size.stdout
+ 
+11:43:38 **** Incremental Build of configuration Debug for project timer_OC_PWM ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F303xE -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "timer_OC_PWM.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\hqnqb\STM32CubeIDE\workspace_1.3.0\timer_OC_PWM\STM32F303RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="timer_OC_PWM.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: timer_OC_PWM.elf
+ 
+arm-none-eabi-objdump -h -S  timer_OC_PWM.elf  > "timer_OC_PWM.list"
+arm-none-eabi-objcopy  -O binary  timer_OC_PWM.elf  "timer_OC_PWM.bin"
+arm-none-eabi-size   timer_OC_PWM.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11388	     20	   1764	  13172	   3374	timer_OC_PWM.elf
+Finished building: default.size.stdout
+ 
+Finished building: timer_OC_PWM.bin
+ 
+Finished building: timer_OC_PWM.list
+ 
+11:47:37 **** Incremental Build of configuration Debug for project timer_OC_PWM ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F303xE -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "timer_OC_PWM.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\hqnqb\STM32CubeIDE\workspace_1.3.0\timer_OC_PWM\STM32F303RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="timer_OC_PWM.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: timer_OC_PWM.elf
+ 
+arm-none-eabi-objdump -h -S  timer_OC_PWM.elf  > "timer_OC_PWM.list"
+arm-none-eabi-objcopy  -O binary  timer_OC_PWM.elf  "timer_OC_PWM.bin"
+arm-none-eabi-size   timer_OC_PWM.elf 
+Finished building: timer_OC_PWM.list
+Finished building: timer_OC_PWM.bin
+ 
+   text	   data	    bss	    dec	    hex	filename
+  11388	     20	   1764	  13172	   3374	timer_OC_PWM.elf
+ 
+Finished building: default.size.stdout
+ 
+11:53:23 **** Incremental Build of configuration Debug for project timer_OC_PWM ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F303xE -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "timer_OC_PWM.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\hqnqb\STM32CubeIDE\workspace_1.3.0\timer_OC_PWM\STM32F303RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="timer_OC_PWM.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: timer_OC_PWM.elf
+ 
+arm-none-eabi-objdump -h -S  timer_OC_PWM.elf  > "timer_OC_PWM.list"
+arm-none-eabi-objcopy  -O binary  timer_OC_PWM.elf  "timer_OC_PWM.bin"
+arm-none-eabi-size   timer_OC_PWM.elf 
+Finished building: timer_OC_PWM.bin
+   text	   data	    bss	    dec	    hex	filename
+  11388	     20	   1764	  13172	   3374	timer_OC_PWM.elf
+ 
+Finished building: default.size.stdout
+ 
+Finished building: timer_OC_PWM.list
+ 
+11:54:46 **** Incremental Build of configuration Debug for project timer_OC_PWM ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F303xE -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "timer_OC_PWM.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\hqnqb\STM32CubeIDE\workspace_1.3.0\timer_OC_PWM\STM32F303RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="timer_OC_PWM.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: timer_OC_PWM.elf
+ 
+arm-none-eabi-objdump -h -S  timer_OC_PWM.elf  > "timer_OC_PWM.list"
+arm-none-eabi-objcopy  -O binary  timer_OC_PWM.elf  "timer_OC_PWM.bin"
+arm-none-eabi-size   timer_OC_PWM.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11388	     20	   1764	  13172	   3374	timer_OC_PWM.elf
+Finished building: default.size.stdout
+ 
+Finished building: timer_OC_PWM.bin
+ 
+Finished building: timer_OC_PWM.list
+ 
+11:56:01 **** Incremental Build of configuration Debug for project timer_OC_PWM ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F303xE -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "timer_OC_PWM.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\hqnqb\STM32CubeIDE\workspace_1.3.0\timer_OC_PWM\STM32F303RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="timer_OC_PWM.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: timer_OC_PWM.elf
+ 
+arm-none-eabi-objdump -h -S  timer_OC_PWM.elf  > "timer_OC_PWM.list"
+arm-none-eabi-objcopy  -O binary  timer_OC_PWM.elf  "timer_OC_PWM.bin"
+arm-none-eabi-size   timer_OC_PWM.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11388	     20	   1764	  13172	   3374	timer_OC_PWM.elf
+Finished building: default.size.stdout
+Finished building: timer_OC_PWM.bin
+ 
+ 
+Finished building: timer_OC_PWM.list
+ 
+11:56:47 **** Incremental Build of configuration Debug for project timer_OC_PWM ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F303xE -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "timer_OC_PWM.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\hqnqb\STM32CubeIDE\workspace_1.3.0\timer_OC_PWM\STM32F303RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="timer_OC_PWM.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: timer_OC_PWM.elf
+ 
+arm-none-eabi-objdump -h -S  timer_OC_PWM.elf  > "timer_OC_PWM.list"
+arm-none-eabi-objcopy  -O binary  timer_OC_PWM.elf  "timer_OC_PWM.bin"
+arm-none-eabi-size   timer_OC_PWM.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11388	     20	   1764	  13172	   3374	timer_OC_PWM.elf
+Finished building: default.size.stdout
+ 
+Finished building: timer_OC_PWM.bin
+ 
+Finished building: timer_OC_PWM.list
+ 
+11:57:40 **** Incremental Build of configuration Debug for project timer_OC_PWM ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F303xE -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "timer_OC_PWM.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\hqnqb\STM32CubeIDE\workspace_1.3.0\timer_OC_PWM\STM32F303RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="timer_OC_PWM.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: timer_OC_PWM.elf
+ 
+arm-none-eabi-objdump -h -S  timer_OC_PWM.elf  > "timer_OC_PWM.list"
+arm-none-eabi-objcopy  -O binary  timer_OC_PWM.elf  "timer_OC_PWM.bin"
+arm-none-eabi-size   timer_OC_PWM.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11388	     20	   1764	  13172	   3374	timer_OC_PWM.elf
+Finished building: default.size.stdout
+ 
+Finished building: timer_OC_PWM.bin
+ 
+Finished building: timer_OC_PWM.list
+ 
+11:58:42 **** Incremental Build of configuration Debug for project timer_OC_PWM ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F303xE -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "timer_OC_PWM.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\hqnqb\STM32CubeIDE\workspace_1.3.0\timer_OC_PWM\STM32F303RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="timer_OC_PWM.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: timer_OC_PWM.elf
+ 
+arm-none-eabi-objdump -h -S  timer_OC_PWM.elf  > "timer_OC_PWM.list"
+arm-none-eabi-objcopy  -O binary  timer_OC_PWM.elf  "timer_OC_PWM.bin"
+arm-none-eabi-size   timer_OC_PWM.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11388	     20	   1764	  13172	   3374	timer_OC_PWM.elf
+Finished building: default.size.stdout
+ 
+Finished building: timer_OC_PWM.bin
+ 
+Finished building: timer_OC_PWM.list
+ 
+11:59:32 **** Incremental Build of configuration Debug for project timer_OC_PWM ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F303xE -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "timer_OC_PWM.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\hqnqb\STM32CubeIDE\workspace_1.3.0\timer_OC_PWM\STM32F303RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="timer_OC_PWM.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: timer_OC_PWM.elf
+ 
+arm-none-eabi-objdump -h -S  timer_OC_PWM.elf  > "timer_OC_PWM.list"
+arm-none-eabi-objcopy  -O binary  timer_OC_PWM.elf  "timer_OC_PWM.bin"
+arm-none-eabi-size   timer_OC_PWM.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11388	     20	   1764	  13172	   3374	timer_OC_PWM.elf
+Finished building: default.size.stdout
+ 
+Finished building: timer_OC_PWM.bin
+ 
+Finished building: timer_OC_PWM.list
+ 
+12:29:45 **** Incremental Build of configuration Debug for project timer_OC_PWM ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F303xE -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "timer_OC_PWM.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\hqnqb\STM32CubeIDE\workspace_1.3.0\timer_OC_PWM\STM32F303RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="timer_OC_PWM.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: timer_OC_PWM.elf
+ 
+arm-none-eabi-objdump -h -S  timer_OC_PWM.elf  > "timer_OC_PWM.list"
+arm-none-eabi-objcopy  -O binary  timer_OC_PWM.elf  "timer_OC_PWM.bin"
+arm-none-eabi-size   timer_OC_PWM.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11388	     20	   1764	  13172	   3374	timer_OC_PWM.elf
+Finished building: default.size.stdout
+ 
+Finished building: timer_OC_PWM.bin
+ 
+Finished building: timer_OC_PWM.list
+ 
+12:36:58 **** Incremental Build of configuration Debug for project timer_OC_PWM ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F303xE -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "timer_OC_PWM.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\hqnqb\STM32CubeIDE\workspace_1.3.0\timer_OC_PWM\STM32F303RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="timer_OC_PWM.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: timer_OC_PWM.elf
+ 
+arm-none-eabi-objdump -h -S  timer_OC_PWM.elf  > "timer_OC_PWM.list"
+arm-none-eabi-objcopy  -O binary  timer_OC_PWM.elf  "timer_OC_PWM.bin"
+arm-none-eabi-size   timer_OC_PWM.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11388	     20	   1764	  13172	   3374	timer_OC_PWM.elf
+Finished building: default.size.stdout
+ 
+Finished building: timer_OC_PWM.bin
+ 
+Finished building: timer_OC_PWM.list
+ 
+12:40:25 **** Incremental Build of configuration Debug for project timer_OC_PWM ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F303xE -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "timer_OC_PWM.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\hqnqb\STM32CubeIDE\workspace_1.3.0\timer_OC_PWM\STM32F303RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="timer_OC_PWM.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: timer_OC_PWM.elf
+ 
+arm-none-eabi-objdump -h -S  timer_OC_PWM.elf  > "timer_OC_PWM.list"
+arm-none-eabi-objcopy  -O binary  timer_OC_PWM.elf  "timer_OC_PWM.bin"
+arm-none-eabi-size   timer_OC_PWM.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11388	     20	   1764	  13172	   3374	timer_OC_PWM.elf
+Finished building: default.size.stdout
+ 
+Finished building: timer_OC_PWM.bin
+ 
+Finished building: timer_OC_PWM.list
+ 
+12:41:01 **** Incremental Build of configuration Debug for project timer_OC_PWM ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F303xE -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "timer_OC_PWM.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\hqnqb\STM32CubeIDE\workspace_1.3.0\timer_OC_PWM\STM32F303RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="timer_OC_PWM.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: timer_OC_PWM.elf
+ 
+arm-none-eabi-objdump -h -S  timer_OC_PWM.elf  > "timer_OC_PWM.list"
+arm-none-eabi-objcopy  -O binary  timer_OC_PWM.elf  "timer_OC_PWM.bin"
+arm-none-eabi-size   timer_OC_PWM.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11388	     20	   1764	  13172	   3374	timer_OC_PWM.elf
+Finished building: default.size.stdout
+ 
+Finished building: timer_OC_PWM.bin
+ 
+Finished building: timer_OC_PWM.list
+ 

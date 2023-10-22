@@ -1,0 +1,42 @@
+//
+//  Personnage.hpp
+//  JDR
+//
+//  Created by Amaury GIBERT on 05/05/2020.
+//  Copyright © 2020 Amaury GIBERT. All rights reserved.
+//
+
+#ifndef Personnage_hpp
+#define Personnage_hpp
+
+#include <string>
+#include <iostream>
+
+#include "Equipement.h"
+#include "Inventaire.h"
+
+class Personnage {
+public:
+    Personnage(std::string);
+    virtual ~Personnage();
+    
+    void affiche();
+    
+    int getPv(){return this->pv;};
+    void setPv(int PV){this->pv = PV;};
+    
+    std::string getNom(){return this->name;};
+    
+    Equipement* getEquipement(){return this->equipement;};
+    Inventaire* getInventaire(){return this->inventaire;};
+    
+private:
+    std::string name;
+    
+    int pv;
+    
+    Equipement* equipement;
+    Inventaire* inventaire;
+};
+
+#endif /* Personnage_hpp */

@@ -1,0 +1,17 @@
+/*
+ * arme1.h
+ *
+ *  Created on: May 14, 2020
+ *      Author: Nabli Hatem
+ */
+
+#ifndef ARME1_H_
+#define ARME1_H_
+
+class arme1 {
+public:
+	arme1();
+	virtual ~arme1();
+};
+
+#endif /* ARME1_H_ */

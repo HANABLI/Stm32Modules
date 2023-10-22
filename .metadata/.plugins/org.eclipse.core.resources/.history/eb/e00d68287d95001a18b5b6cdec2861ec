@@ -1,0 +1,86 @@
+//============================================================================
+// Name        : JeuxDeRole.cpp
+// Author      : NABLI Hatem
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include <string>
+#include <time.h>
+
+#include "Utilisateur.h"
+#include "Objet.h"
+#include "Arme.h"
+#include "Armure.h"
+#include "Histoire.h"
+
+int main(int argc, const char * argv[]) {
+    Utilisateur* utilisateur = new Utilisateur();
+    utilisateur->creation_personnage("Toto");
+
+//    Arme* Stock_Armes =  new Arme("Stock");
+//    Stock_Armes->mesArmes();
+
+    Histoire* histoire = new Histoire(utilisateur);
+
+//    Stock_Armes->affiche();
+
+    utilisateur->getPersonnage(0)->getEquipement()->equip("Hache");
+
+    int j = 0;
+    char c;
+    srand(time(NULL));
+    std::string adresse = "C:/Users/hqnqb/Documents/projet_final/ProjetFinal/text_test/";
+    char suite = '1';
+    bool isGood = false;
+    //const char* adress = adresse.c_str();
+    std::vector<std::string> num_suivant;
+    std::cout << "********************************************************************************************" << std::endl;
+    std::cout << "*\t\t\tVous allez commencer une histoire merveilleuse !\t\t\t\t\t*" << std::endl;
+    std::cout << "*\t\t\t\t\tEtes-vous pret à en decouvre ?\t\t\t\t\t\t\t*" << std::endl;
+
+    while (utilisateur->getPersonnage(0)->getPv() > 0)
+    {
+        adresse = "C:/Users/hqnqb/Documents/projet_final/ProjetFinal/text_test/";
+        adresse += suite;
+        adresse += ".txt";
+        std::cout<<adresse<<std::endl;
+        j = histoire->lire_fichier(adresse);
+        std::cout << "********************************************************************************************" << std::endl;
+        num_suivant = histoire->analyse_fichier();
+        histoire->affiche_texte();
+        histoire->actions();
+
+        std::cout << std::endl;
+
+        while (!isGood)
+        {
+            std::cout << "Tapez ";
+            for(auto i = 0 ; i < num_suivant.size() ; i++)
+            {
+                for(auto j = 0 ; j < num_suivant[i].size() ; j++ )
+                {
+                    std::cout << num_suivant[i][j];
+                }
+                if (i < num_suivant.size()-1)
+                    std::cout << " ou ";
+            }
+            std::cout << " : " << std::endl;
+
+            suite = getchar();
+            while ((c = getchar()) != '\n' && c != EOF);
+            for(auto i = 0 ; i < num_suivant.size() ; i++)
+            {
+                if (num_suivant[i][0] == suite)
+                    isGood = true;
+            }
+        }
+        isGood = false;
+    }
+
+    delete histoire;
+
+    return 0;
+}

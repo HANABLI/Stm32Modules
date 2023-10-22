@@ -1,0 +1,20 @@
+18:23:09 **** Incremental Build of configuration Debug for project stm32f303xx_drivers ****
+make -j4 all 
+arm-none-eabi-gcc "../Drivers/Src/007main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F3 -DDEBUG -DSTM32F303RETx -c -I../Inc -I"C:/Users/hqnqb/STM32CubeIDE/workspace_1.3.0/stm32f303xx_drivers/Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/Src/007main.d" -MT"Drivers/Src/007main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/Src/007main.o"
+arm-none-eabi-gcc -o "stm32f303xx_drivers.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\hqnqb\STM32CubeIDE\workspace_1.3.0\stm32f303xx_drivers\STM32F303RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32f303xx_drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: stm32f303xx_drivers.elf
+ 
+arm-none-eabi-objdump -h -S  stm32f303xx_drivers.elf  > "stm32f303xx_drivers.list"
+arm-none-eabi-objcopy  -O binary  stm32f303xx_drivers.elf  "stm32f303xx_drivers.bin"
+arm-none-eabi-size   stm32f303xx_drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3088	     28	   1604	   4720	   1270	stm32f303xx_drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: stm32f303xx_drivers.bin
+Finished building: stm32f303xx_drivers.list
+ 
+ 
+
+18:23:12 Build Finished. 0 errors, 0 warnings. (took 3s.39ms)
+

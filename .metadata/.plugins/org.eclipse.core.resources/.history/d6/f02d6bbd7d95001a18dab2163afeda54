@@ -1,0 +1,43 @@
+#ifndef EQUIPEMENT_H
+#define EQUIPEMENT_H
+
+#include <iostream>
+#include <string>
+#include <map>
+#include <vector>
+#include "Arme.h"
+
+
+class Equipement
+{
+public:
+    Equipement();
+    virtual ~Equipement();
+
+    void equip(std::string);
+    std::vector<int> combattre();
+
+
+        //METHODES
+
+//      Potion GetPotion();
+ //     void setPotion(Potion potion);
+
+//      Magie GetMagie();
+//      void setMagie(Magie magie);
+
+protected:
+
+private:
+    std::map<std::string, std::vector<int> > EquipArme;
+    Arme *arme;
+        //ATTRIBUTS
+
+    //  std::map<std::string, int > TabArmure;
+   //   Potion *potion;
+   //   Magie *magie;
+
+
+};
+
+#endif // EQUIPEMENT_H

@@ -1,0 +1,11 @@
+02:19:51 **** Incremental Build of configuration Release for project stm32f303xx_driver ****
+make -j4 all 
+arm-none-eabi-gcc -o "stm32f303xx_driver.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\hqnqb\STM32CubeIDE\workspace_1.3.0\stm32f303xx_driver\STM32F303RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32f303xx_driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Startup/startup_stm32f303retx.o: In function `LoopFillZerobss':
+(.text.Reset_Handler+0x32): undefined reference to `main'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:43: stm32f303xx_driver.elf] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+
+02:19:53 Build Failed. 1 errors, 0 warnings. (took 1s.500ms)
+

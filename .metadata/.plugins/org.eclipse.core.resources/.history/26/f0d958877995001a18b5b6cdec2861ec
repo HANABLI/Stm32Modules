@@ -1,0 +1,86 @@
+#include "Equipement.h"
+
+
+
+Equipement::Equipement()
+{
+    std::cout << "L equipement est cree " << std::endl;
+    this->arme = new Arme();
+    this->arme->mesArmes();
+ //   setArme(a);
+ //   setArmure(b);
+ //   setPotion(c);
+ //   setMagie(d);
+}
+
+Equipement::~Equipement()
+{
+    //dtor
+    std::cout << "L equipement est detruit " << std::endl;
+}
+
+void Equipement::equip(std::string NomArme) //setArme
+{
+    std::vector<int> CaracArme;
+    CaracArme = this->arme->getArme(NomArme);
+    this->EquipArme[NomArme] = CaracArme;
+}
+
+
+std::vector<int> Equipement::combattre() //GetArme
+{
+    std::map<std::string,std::vector<int>>::iterator it = EquipArme.begin();
+
+    return EquipArme[it->first];
+}
+
+
+/*
+Arme Equipement::GetArme()
+{
+ //   return *arme;
+}
+
+
+void Equipement::equip(std::string NomArme) //setArme
+{
+    std::vector<int> CaracArme;
+    CaracArme = this->arme->getArme(NomArme);
+    this->EquipArme[NomArme] = CaracArme;
+}
+
+
+std::vector<int> Equipement::combattre() //GetArme
+{
+    std::map<std::string,std::vector<int>>::iterator it = EquipArme.begin();
+
+    return EquipArme[it->first];
+}
+
+
+/*
+Potion Equipement::GetPotion()
+{
+ //   return *potion;
+}
+
+
+void Equipement::setPotion(Potion pot)
+{
+  //  *potion=pot;
+}
+
+
+Magie Equipement::GetMagie()
+{
+  //  return *magie;
+}
+
+
+void Equipement::setMagie(Magie mag)
+{
+ //   *magie=mag;
+}
+
+*/
+

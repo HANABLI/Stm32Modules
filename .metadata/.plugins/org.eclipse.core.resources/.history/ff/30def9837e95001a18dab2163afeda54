@@ -1,0 +1,30 @@
+//
+//  Utilisateur.hpp
+//  Objet_Personnage
+//
+//  Created by Amaury GIBERT on 06/05/2020.
+//  Copyright © 2020 Amaury GIBERT. All rights reserved.
+//
+
+#ifndef Utilisateur_h
+#define Utilisateur_h
+
+#include <iostream>
+#include <vector>
+
+#include "Personnage.h"
+
+class Utilisateur {
+public:
+    Utilisateur();
+    virtual ~Utilisateur();
+    
+    void creation_personnage(std::string);
+    void affichage_personnage();
+    
+    Personnage* getPersonnage(int i){return this->personnages[i];};
+private:
+    std::vector<Personnage*> personnages;
+};
+
+#endif /* Utilisateur_hpp */

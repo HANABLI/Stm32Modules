@@ -1,0 +1,19 @@
+00:48:27 **** Incremental Build of configuration Debug for project HSImeaserement ****
+make -j4 all 
+arm-none-eabi-gcc -o "HSImeaserement.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\hqnqb\STM32CubeIDE\workspace_1.3.0\HSImeaserement\STM32F303RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HSImeaserement.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: HSImeaserement.elf
+ 
+arm-none-eabi-objdump -h -S  HSImeaserement.elf  > "HSImeaserement.list"
+arm-none-eabi-objcopy  -O binary  HSImeaserement.elf  "HSImeaserement.bin"
+arm-none-eabi-size   HSImeaserement.elf 
+   text	   data	    bss	    dec	    hex	filename
+    744	      8	   1568	   2320	    910	HSImeaserement.elf
+Finished building: default.size.stdout
+ 
+Finished building: HSImeaserement.bin
+ 
+Finished building: HSImeaserement.list
+ 
+
+00:48:31 Build Finished. 0 errors, 0 warnings. (took 3s.510ms)
+

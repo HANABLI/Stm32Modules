@@ -1,0 +1,18 @@
+/*
+ * main.c
+ *
+ *  Created on: Jun 24, 2020
+ *      Author: Nabli Hatem
+ */
+
+#include "stm32f3xx_hal.h"
+
+
+
+
+
+int main(void)
+{
+	HAL_Init();
+
+}

@@ -1,0 +1,10 @@
+23:50:41 **** Incremental Build of configuration Debug for project Volatile_experiment ****
+make -j4 all 
+arm-none-eabi-size   Volatile_experiment.elf 
+   text	   data	    bss	    dec	    hex	filename
+    680	      8	   1568	   2256	    8d0	Volatile_experiment.elf
+Finished building: default.size.stdout
+ 
+
+23:50:42 Build Finished. 0 errors, 0 warnings. (took 1s.50ms)
+

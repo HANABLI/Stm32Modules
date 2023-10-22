@@ -1,0 +1,24 @@
+// Auteur : NABLi Hatem
+//Date : 06/05/2020
+#ifndef OBJET_H
+#define OBJET_H
+
+#include <string>
+
+
+class Objet
+{
+    public:
+        Objet();
+        virtual ~Objet();
+        std::string getName(){return this->name;};
+        void setName(std::string name);
+
+
+    protected:
+
+    private:
+        std::string name;
+};
+
+#endif // OBJET_H

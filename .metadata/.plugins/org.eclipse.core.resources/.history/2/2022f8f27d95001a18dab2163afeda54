@@ -1,0 +1,58 @@
+#include "Arme.h"
+#include "Objet.h"
+#include "split.h"
+#include <stdlib.h>
+#include <sstream>
+#include <istream>
+#include <fstream>
+#include <vector>
+#include <iostream>
+#include <string>
+
+Arme::Arme() : Objet()
+{
+    //ctor
+    std::cout<< "Arme creee" <<std::endl;
+}
+
+void Arme::mesArmes()
+{
+    std::ifstream fichier{"C:/Users/hqnqb/Documents/projet_final/ProjetFinal/Arme.txt"};
+
+    std::string ligne(" ");
+    std::vector<std::string> d;
+
+    while(std::getline(fichier,ligne))
+    {
+
+        d=this->armes.tabsplit(ligne,' ');
+        for(auto i =1 ;i<5;i++)
+        {
+
+            this->listeArmes[d[0]].push_back(atoi(d[i].c_str()));
+        }
+
+    }
+    fichier.close();
+}
+
+void Arme::affiche()
+{
+    for(std::map<std::string,std::vector<int>>::iterator it = listeArmes.begin();it!=listeArmes.end();it++)
+    {
+        std::cout<<it->first<<":\t";
+        for(auto j = 0;j < listeArmes[it->first].size();j++)
+
+
+            std::cout<<listeArmes[it->first][j]<<"\t";
+        std::cout<<std::endl;
+    }
+
+}
+Arme::~Arme()
+{
+    //dtor
+    std::cout<<"Arme detruite"<<std::endl;
+}
+
+

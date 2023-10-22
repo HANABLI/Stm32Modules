@@ -1,0 +1,10 @@
+20:06:00 **** Build of configuration Debug for project timer_OC_1 ****
+make -j4 all 
+arm-none-eabi-size   timer_OC_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11432	     36	   1764	  13232	   33b0	timer_OC_1.elf
+Finished building: default.size.stdout
+ 
+
+20:06:02 Build Finished. 0 errors, 0 warnings. (took 1s.720ms)
+

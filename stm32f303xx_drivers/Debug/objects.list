@@ -1,0 +1,7 @@
+"Drivers/Src/007main.o"
+"Drivers/Src/stm32f303xx_gpio_drivers.o"
+"Drivers/Src/stm32f303xx_i2c_drivers.o"
+"Drivers/Src/stm32f303xx_rcc_driver.o"
+"Src/syscalls.o"
+"Src/sysmem.o"
+"Startup/startup_stm32f303retx.o"

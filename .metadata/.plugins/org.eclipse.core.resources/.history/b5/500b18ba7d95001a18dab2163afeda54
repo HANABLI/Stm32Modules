@@ -1,0 +1,30 @@
+#ifndef ARME_H
+#define ARME_H
+#include "Objet.h"
+#include "split.h"
+#include <string>
+#include <iostream>
+#include <fstream>
+#include <map>
+#include <vector>
+
+class Arme:public Objet
+{
+public:
+    Arme();
+    virtual ~Arme();
+    void mesArmes();
+     void affiche();
+     std::vector<int> getArme(std::string name){return this->listeArmes[name];}
+
+protected:
+
+private:
+    std::map<std::string, std::vector<int>> listeArmes;
+    std::vector<std::string> dic;
+    split<std::string> armes;
+
+
+};
+
+#endif // ARME_H

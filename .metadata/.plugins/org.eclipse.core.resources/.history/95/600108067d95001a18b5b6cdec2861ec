@@ -1,0 +1,35 @@
+//
+//  Utilisateur.cpp
+//  Objet_Personnage
+//
+//  Created by Amaury GIBERT on 06/05/2020.
+//  Copyright © 2020 Amaury GIBERT. All rights reserved.
+//
+
+
+#include "Utilisateur.h"
+Utilisateur::Utilisateur() {
+    std::cout << "Utilisateur créée" << std::endl;
+}
+
+Utilisateur::~Utilisateur() {
+    std::cout << "Utilisateur a quitté" << std::endl;
+    for(auto i = 0 ; i < this->personnages.size() ; i++)
+    {
+        delete this->personnages[i];
+    }
+}
+
+void Utilisateur::creation_personnage(std::string name) {
+    Personnage* personnage = new Personnage(name);
+    this->personnages.push_back(personnage);
+}
+
+void Utilisateur::affichage_personnage() {
+    for(auto i = 0 ; i < this->personnages.size() ; i++)
+    {
+        this->personnages[i]->affiche();
+    }
+}
+
+

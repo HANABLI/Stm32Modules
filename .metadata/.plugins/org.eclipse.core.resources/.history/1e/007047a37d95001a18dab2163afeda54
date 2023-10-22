@@ -1,0 +1,29 @@
+//
+//  Personnage.cpp
+//  JDR
+//
+//  Created by Amaury GIBERT on 05/05/2020.
+//  Copyright © 2020 Amaury GIBERT. All rights reserved.
+//
+
+#include "Personnage.h"
+
+
+Personnage::Personnage(std::string n) {
+    std::cout << "Personnage créée" << std::endl;
+    this->equipement = new Equipement();
+    this->inventaire = new Inventaire(10);
+    this->name = n;
+    this->pv = 15;
+}
+
+Personnage::~Personnage() {
+    std::cout << "Personnage mort" << std::endl;
+    delete this->equipement;
+    delete this->inventaire;
+}
+
+void Personnage::affiche() {
+    std::cout << "Fiche du personnage :" << std::endl;
+    std::cout << "Nom : " << this->name << std::endl;
+}

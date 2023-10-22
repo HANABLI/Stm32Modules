@@ -1,0 +1,20 @@
+23:57:18 **** Incremental Build of configuration Debug for project Test1 ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F303xE -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Test1.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\hqnqb\STM32CubeIDE\workspace_1.3.0\Test1\STM32F303RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Test1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Test1.elf
+ 
+arm-none-eabi-objdump -h -S  Test1.elf  > "Test1.list"
+arm-none-eabi-objcopy  -O binary  Test1.elf  "Test1.bin"
+arm-none-eabi-size   Test1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5844	     24	   1696	   7564	   1d8c	Test1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Test1.bin
+ 
+Finished building: Test1.list
+ 
+
+23:57:22 Build Finished. 0 errors, 0 warnings. (took 4s.708ms)
+

@@ -1,0 +1,58 @@
+//
+//  Histoire.hpp
+//  Objet_Personnage
+//
+//  Created by Amaury GIBERT on 06/05/2020.
+//  Copyright © 2020 Amaury GIBERT. All rights reserved.
+//
+
+#ifndef Histoire_hpp
+#define Histoire_hpp
+
+#include <stdio.h>
+#include <iostream>
+#include <vector>
+#include <fstream>
+#include <stdlib.h>
+
+#include "Split.h"
+#include "Utilisateur.hpp"
+
+class Histoire {
+
+public:
+	Histoire(Utilisateur*);
+	virtual ~Histoire();
+
+	int lire_fichier(std::string);
+
+	bool demander_objet(std::string);
+	void ajouter_objet(std::string);
+
+	std::vector<std::string> analyse_fichier();
+	void actions();
+
+	void affiche_texte();
+	void affiche_texte_cache();
+	void affiche();
+
+	void combatre();
+	bool discuter();
+
+	void clear_textes();
+
+private:
+	Utilisateur *utilisateur;
+
+	int combat;
+	int discussion;
+	bool ObjetUse;
+
+	split<std::string> split;
+
+	std::vector<std::vector<std::string>> texte;
+
+	std::vector<std::vector<std::string>> texte_cache;
+};
+
+#endif /* Histoire_hpp */

@@ -1,0 +1,279 @@
+//
+//  Histoire.cpp
+//  Objet_Personnage
+//
+//  Created by Amaury GIBERT on 06/05/2020.
+//  Copyright © 2020 Amaury GIBERT. All rights reserved.
+//
+
+#include "Histoire.hpp"
+
+
+Histoire::Histoire(Utilisateur* utilisateur) {
+    std::cout << "Histoire créée" << std::endl;
+    this->utilisateur = utilisateur;
+    this->combat = -1;
+    this->discussion = -1;
+    this->ObjetUse = false;
+}
+
+Histoire::~Histoire() {
+    delete this->utilisateur;
+    std::cout << "Histoire finie" << std::endl;
+}
+
+int Histoire::lire_fichier(std::string name) {
+    this->clear_textes();
+
+    std::ifstream myFile(name);
+    std::string ligne {""};
+    std::vector<std::vector<std::string>> vec;
+
+    bool isNum = true;
+    bool isCache = false;
+
+    if (myFile)
+    {
+        while (std::getline(myFile, ligne))
+        {
+            vec.push_back(this->split.tabsplit(ligne,' '));
+
+            if (vec[0][0].compare("FF1") == 0)
+                isCache = true;
+
+            if (isCache == false)
+            {
+                if ((vec[0][0].compare("C") == 0)||(vec[0][0].compare("D") == 0)||(vec[0][0].compare("UOBJ") == 0)||(vec[0][0].compare("OBJ") == 0)||(vec[0][0].compare("FF") == 0)||isNum == true)
+                {
+                    this->texte.push_back(this->split.tabsplit(ligne,' '));
+                    isNum = false;
+                }
+                else
+                    this->texte.push_back(this->split.tabsplit(ligne,'.'));
+            }
+            else
+            {
+                if ((vec[0][0].compare("C") == 0)||(vec[0][0].compare("D") == 0)||(vec[0][0].compare("UOBJ") == 0)||(vec[0][0].compare("OBJ") == 0))
+                    this->texte_cache.push_back(this->split.tabsplit(ligne,' '));
+                else
+                    this->texte_cache.push_back(this->split.tabsplit(ligne,'.'));
+            }
+
+            vec.pop_back();
+        }
+    }
+    else
+    {
+        std::cout << "fichier non ouvert" << std::endl;
+        return -1;
+    }
+
+    myFile.close();
+
+    return 0;
+}
+
+void Histoire::affiche() {
+    for(auto i = 0 ; i < this->texte.size() ; i++)
+    {
+        for(auto j = 0 ; j < this->texte[i].size() ; j++)
+        {
+            std::cout << this->texte[i][j] << std::endl;
+        }
+    }
+
+    /*std::cout << this->combat << std::endl;
+    std::cout << this->discussion << std::endl;
+    std::cout << this->ObjetUse << std::endl;*/
+}
+
+bool Histoire::demander_objet(std::string name) {
+    //return this->utilisateur->getPersonnage(0)->getInventaire()->GetOutOf Inventaire(name);
+    return true;
+}
+
+void Histoire::ajouter_objet(std::string name) {
+
+    //this->utilisateur->getPersonnage(0)->getInventaire()->putInInventaire(name);
+}
+
+std::vector<std::string> Histoire::analyse_fichier() {
+    std::vector<std::string> num_suivant;
+    this->combat = -1;
+    this->discussion = -1;
+    this->ObjetUse = false;
+
+    for(auto i = 1 ; i < this->texte.size() ; i++)
+    {
+        //std::cout << texte[i][0] << std::endl;
+
+        if(this->texte[i][0].compare("C") == 0)
+        {
+            this->combat = atoi(texte[i][1].c_str());
+        }
+        else if(this->texte[i][0].compare("D") == 0)
+        {
+            this->discussion = atoi(texte[i][1].c_str());
+        }
+        else if(this->texte[i][0].compare("UOBJ") == 0)
+        {
+            this->ObjetUse = this->demander_objet(this->texte[i][1]);
+        }
+        else if(this->texte[i][0].compare("OBJ") == 0)
+        {
+            this->ajouter_objet(texte[i][1]);
+        }
+    }
+
+    for(int i = 0 ; i < this->texte[0].size() ; i++)
+    {
+        num_suivant.push_back(this->texte[0][i]);
+    }
+    return num_suivant;
+}
+
+void Histoire::actions() {
+    bool isGood = false;
+    if((this->discussion!=-1) &&(this->combat!=-1))
+    {
+        int choix = -1;
+        bool isChoix = false;
+
+        while (!isChoix) {
+            std::cout<<"0 : discuter"<<std::endl;
+            std::cout<<"1 : Combatre"<<std::endl;
+
+            if (std::cin >> choix){
+                if (choix == 1 || choix == 0)
+                    isChoix = true;
+            }
+            else {
+                std::cout << "Tu n'as pas rentre d'entier" << std::endl;
+                std::cin.clear();
+                std::cin.ignore(255,'\n');
+            }
+        }
+
+        if(choix == 0)
+        {
+            isGood = this->discuter();
+            if (!isGood)
+            {
+                this->utilisateur->getPersonnage(0)->setPv(this->utilisateur->getPersonnage(0)->getPv()- this->combat);
+                std::cout<<"-"<<this->combat<<" points de vie"<<std::endl;
+                std::cout << "Il vous reste " << this->utilisateur->getPersonnage(0)->getPv() << " points de vie." << std::endl;
+            }
+
+        }
+        else
+        {
+            this->combatre();
+        }
+    }
+    else if(this->discussion != -1)
+    {
+        this->discuter();
+    }
+    else if(this->combat != -1)
+    {
+        this->combatre();
+    }
+
+    if(this->ObjetUse == true)
+    {
+        this->affiche_texte_cache();
+    }
+}
+
+
+void Histoire::clear_textes() {
+    unsigned long taille = this->texte.size();
+
+    for(unsigned auto i = 0 ; i < taille ; i++)
+    {
+        this->texte.pop_back();
+    }
+
+    taille = this->texte_cache.size();
+    for(int i = 0 ; i < taille ; i++)
+    {
+        this->texte_cache.pop_back();
+    }
+}
+
+void Histoire::affiche_texte()
+{
+    bool FinText = false;
+
+    for(int i = 1 ; i < this->texte.size() ; i++)
+    {
+        if (FinText == true)
+        {
+            for(int j = 0 ; j < this->texte[i].size() ; j++)
+            {
+                std::cout << this->texte[i][j] << "." <<std::endl;
+            }
+        }
+        if(this->texte[i][0].compare("FF") == 0)
+        {
+            FinText = true;
+        }
+    }
+}
+
+bool Histoire::discuter()
+{
+    int v = rand() % 100;
+    if(v < this->discussion)
+    {
+        std::cout<<"discussion réussi !"<<std::endl;
+        this->affiche_texte_cache();
+        return true;
+    }
+    else{
+        std::cout<<"discussion pas réussi !"<<std::endl;
+        return false;
+    }
+}
+
+void Histoire::combatre()
+{
+    std::cout << std::endl;
+
+    std::cout << "Un ennemi menaçant vous fait face !!" << std::endl;
+    int randomIndex = rand() % this->utilisateur->getPersonnage(0)->getEquipement()->combattre().size();
+    int Force = this->utilisateur->getPersonnage(0)->getEquipement()->combattre()[randomIndex];
+    //std::cout<<randomIndex<<std::endl;
+    std::cout<<"J'attaque avec "<< Force <<std::endl;
+    if(this->utilisateur->getPersonnage(0)->getEquipement()->combattre()[randomIndex] >= this->combat)
+    {
+        std::cout<<"Combat réussi"<<std::endl;
+        this->affiche_texte_cache();
+    }
+    else
+    {
+        this->utilisateur->getPersonnage(0)->setPv(this->utilisateur->getPersonnage(0)->getPv()-( this->combat - Force));
+        std::cout<<"-"<<this->combat - Force <<" points de vie"<<std::endl;
+        std::cout << "Il vous reste " << this->utilisateur->getPersonnage(0)->getPv() << " points de vie." << std::endl;
+    }
+
+}
+
+void Histoire::affiche_texte_cache()
+{
+    std::cout << std::endl;
+    for (int i = 1 ; i < this->texte_cache.size() ; i++)
+    {
+        if((this->texte_cache[i][0].compare("FF1") == 0)||(this->texte_cache[i][0].compare("C") == 0)||(this->texte_cache[i][0].compare("D") == 0)||(this->texte_cache[i][0].compare("UOBJ") == 0)||(this->texte_cache[i][0].compare("OBJ") == 0))
+        {;}
+        else
+        {
+            for(int j = 0 ; j < this->texte_cache[i].size() ; j++)
+            {
+                std::cout << this->texte_cache[i][j] << "." <<std::endl;
+            }
+
+        }
+    }
+}
+

@@ -1,0 +1,43 @@
+#ifndef SPLIT_H_INCLUDED
+#define SPLIT_H_INCLUDED
+#include <string>
+#include <vector>
+#include <istream>
+#include <sstream>
+
+using namespace std;
+
+template<typename T>
+class split{
+
+
+public:
+        split();
+        vector<string>tabsplit(string chaine,char delimiteur);
+
+
+private:
+    string mot;
+    vector<string> elements;
+
+
+};
+template<typename T>
+split<T>::split()
+{
+
+}
+template<typename T>
+vector<string> split<T>::tabsplit(string chaine, char delimitateur)
+{
+    istringstream iss(chaine);
+    elements.clear();
+    while (getline(iss,mot,delimitateur))
+    {
+        //cout <<mot<<endl;
+        elements.push_back(mot);
+    }
+    return elements;
+}
+
+#endif // SPLIT_H_INCLUDED

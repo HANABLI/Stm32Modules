@@ -1,0 +1,15 @@
+/*
+ * msp.c
+ *
+ *  Created on: Jun 19, 2020
+ *      Author: Nabli Hatem
+ */
+#include "stm32f3xx_hal.h"
+void HAL_MspInit(void)
+{
+	//1. Set up the priority grouping of the arm cortex mx processor
+	HAL_NVIC_SetPriorityGrouping(NVIC_PRIORITYGROUP_4);
+	//2. Enable the required system exceptions of the arm cortex mx processor
+	SCB->SHCSR |=
+}
+HAL_TIM_OC_MspInit(htim);

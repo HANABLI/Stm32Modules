@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="selection" value="TIM_Counter_Mode"/>
+		<item key="wrap" value="false"/>
+		<item key="casesensitive" value="false"/>
+		<item key="wholeword" value="false"/>
+		<item key="incremental" value="false"/>
+		<item key="isRegEx" value="false"/>
+		<list key="findhistory">
+			<item value="TIM_Counter_Mode"/>
+			<item value="TIM_Output_Compare_and_PWM_modes"/>
+			<item value="HAL_TIM_OC_CaptureCallback"/>
+			<item value="HAL_TIM_IC_CaptureCallback"/>
+			<item value="HAL_TIM_OC_MS"/>
+			<item value="HAL_TIM_"/>
+			<item value="__HAL_TIM_ENABLE_IT"/>
+			<item value="TIM_Input_Capture_Selection"/>
+			<item value="TIM_Input_Capture_Prescaler"/>
+			<item value="USE_HAL_TIM_REGISTER_CALLBACKS"/>
+			<item value="HAL_TIM_PeriodElapsedCallback"/>
+			<item value="HAL_TIM_PeriodElapsedCallback(htim)"/>
+			<item value="HAL_TIM_REGISTER_CALLBACKS"/>
+			<item value="TIM6"/>
+			<item value="RCC_PLL_Multiplication_Factor"/>
+		</list>
+		<list key="replacehistory">
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="267"/>
+		<item key="DIALOG_Y_ORIGIN" value="334"/>
+		<item key="DIALOG_WIDTH" value="284"/>
+		<item key="DIALOG_HEIGHT" value="391"/>
+		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="452"/>
+		<item key="DIALOG_Y_ORIGIN" value="247"/>
+	</section>
+</section>

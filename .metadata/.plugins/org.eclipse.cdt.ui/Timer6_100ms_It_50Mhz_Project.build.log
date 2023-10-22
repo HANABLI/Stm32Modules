@@ -1,0 +1,10 @@
+15:21:15 **** Incremental Build of configuration Debug for project Timer6_100ms_It_50Mhz_Project ****
+make -j4 all 
+arm-none-eabi-size   Timer6_100ms_It_50Mhz_Project.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8816	     20	   1636	  10472	   28e8	Timer6_100ms_It_50Mhz_Project.elf
+Finished building: default.size.stdout
+ 
+
+15:21:16 Build Finished. 0 errors, 0 warnings. (took 1s.347ms)
+

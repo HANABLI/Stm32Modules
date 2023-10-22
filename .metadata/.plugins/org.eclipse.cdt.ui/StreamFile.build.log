@@ -1,0 +1,9 @@
+11:39:39 **** Build of configuration Debug for project StreamFile ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/ST/STM32CubeIDE_1.3.0/STM32CubeIDE/jre/bin/server;C:/ST/STM32CubeIDE_1.3.0/STM32CubeIDE/jre/bin;C:/ST/STM32CubeIDE_1.3.0/STM32CubeIDE/jre/lib/amd64;C:\ProgramData\Oracle\Java\javapath;C:\Program Files\Microsoft MPI\Bin\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Java\jdk-9.0.1\bin;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\MinGW\bin;C:\Program Files\MATLAB\R2017b\runtime\win64;C:\Program Files\MATLAB\R2017b\bin;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin\;C:\Program Files\IVI Foundation\VISA\Win64\Bin\;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin;C:\Program Files (x86)\SQLite3;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Microsoft VS Code\bin;C:\Program Files (x86)\PuTTY\;C:\Users\hqnqb\AppData\Local\Programs\Python\Python36-32\Scripts\;C:\Users\hqnqb\AppData\Local\Programs\Python\Python36-32\;C:\Users\hqnqb\AppData\Local\Microsoft\WindowsApps;C:\Users\hqnqb\AppData\Roaming\npm;C:\MinGW\bin;;C:\ST\STM32CubeIDE_1.3.0\STM32CubeIDE]
+
+11:39:40 Build Failed. 1 errors, 0 warnings. (took 1s.6ms)
+

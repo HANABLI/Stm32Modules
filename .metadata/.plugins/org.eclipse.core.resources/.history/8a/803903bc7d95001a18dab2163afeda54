@@ -1,0 +1,18 @@
+#ifndef ARMURE_H
+#define ARMURE_H
+#include "Objet.h"
+#include <string>
+
+class Armure : public Objet
+{
+    public:
+        Armure();
+        virtual ~Armure();
+
+    protected:
+
+    private:
+        std::string name;
+};
+
+#endif // ARMURE_H

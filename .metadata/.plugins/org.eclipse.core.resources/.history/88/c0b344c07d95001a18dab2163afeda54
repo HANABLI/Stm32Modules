@@ -1,0 +1,28 @@
+// Auteur : NABLi Hatem
+//Date : 06/05/2020
+#ifndef INVENTAIRE_H
+#define INVENTAIRE_H
+#include "Objet.h"
+#include <vector>
+
+class Inventaire
+{
+    public:
+        Inventaire(int);
+        virtual ~Inventaire();
+        void setTaille(int);
+        int getTaille(){return this->taille;}
+        void putInInventaire(std::string objet);
+        bool getOutOfInventaire(std::string objet);
+        void DisplayAllItems();
+
+    protected:
+
+    private:
+        int taille;
+        int nbObjet;
+        std::vector<std::string> objets;
+
+};
+
+#endif // INVENTAIRE_H
